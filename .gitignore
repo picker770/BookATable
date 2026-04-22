@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Secrets
+env.Py
+.env
+*.env
