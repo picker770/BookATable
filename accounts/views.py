@@ -15,7 +15,12 @@ def register(request):
             messages.success(request, f'Account created for {username}! You can now log in.')
             return redirect('login')
         else:
-            form = UserCreationForm()
+             # Form is invalid, return to registration page with errors
+             return render(request, 'accounts/register.html', { 'form': form })
+        
+    else:
+        # GET request - show empty registration form
+        form = UserCreationForm()
         return render(request, 'accounts/register.html', {'form': form})
     
 @login_required
