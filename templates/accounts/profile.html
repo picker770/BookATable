@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}My Profile - BookATable Spice{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-primary-green text-white text-center">
+                    <h3><i class="fas fa-user-circle"></i> My Profile</h3>
+                </div>
+                <div class="card-body">
+                    <h4>Welcome, {{ user.username }}!</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong><i class="fas fa-envelope"></i> Email:</strong> {{ user.email|default:"Not provided" }}</p>
+                            <p><strong><i class="fas fa-calendar-alt"></i> Date Joined:</strong> {{ user.date_joined|date:"F d, Y" }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong><i class="fas fa-user"></i> Username:</strong> {{ user.username }}</p>
+                            <p><strong><i class="fas fa-clock"></i> Last Login:</strong> {{ user.last_login|date:"F d, Y H:i" }}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="text-center mt-3">
+                        <a href="{% url 'home' %}" class="btn btn-primary">
+                            <i class="fas fa-home"></i> Back to Home
+                        </a>
+                       </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
