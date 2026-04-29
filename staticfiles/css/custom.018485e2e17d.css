@@ -1,0 +1,251 @@
+/* ============================================
+   BookATable Spice - Custom Styles
+   Color Scheme: Fresh & Green
+   ============================================ */
+
+/* CSS Variables */
+:root {
+    --primary-green: #556B2F;
+    --primary-beige: #F5F5DC;
+    --dark-gray: #333333;
+    --light-gray: #f8f9fa;
+    --white: #ffffff;
+}
+
+/* Global Styles */
+body {
+    background-color: var(--primary-beige);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--dark-gray);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* ============================================
+   Navigation Bar
+   ============================================ */
+.navbar {
+    background-color: var(--primary-green);
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    color: var(--white) !important;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-brand i {
+    margin-right: 8px;
+}
+
+.nav-link {
+    color: var(--white) !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-beige) !important;
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   Buttons
+   ============================================ */
+.btn-primary {
+    background-color: var(--primary-green);
+    border-color: var(--primary-green);
+    padding: 10px 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #3d4f21;
+    border-color: #3d4f21;
+    transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+    color: var(--primary-green);
+    border-color: var(--primary-green);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-green);
+    border-color: var(--primary-green);
+}
+
+.btn-light {
+    background-color: var(--white);
+    color: var(--primary-green);
+    border: none;
+}
+
+.btn-light:hover {
+    background-color: var(--primary-beige);
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   Cards
+   ============================================ */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+}
+
+.card i {
+    color: var(--primary-green);
+}
+
+/* ============================================
+   Hero Section
+   ============================================ */
+.hero-section {
+    background: linear-gradient(rgba(85, 107, 47, 0.75), rgba(85, 107, 47, 0.75)), 
+                url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--white);
+    padding: 120px 0;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s ease;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.footer {
+    background-color: var(--primary-green);
+    color: var(--white);
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+.footer a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: var(--primary-beige);
+    text-decoration: underline;
+}
+
+/* ============================================
+   Menu Page Styles
+   ============================================ */
+.menu-category {
+    color: var(--primary-green);
+    border-bottom: 3px solid var(--primary-green);
+    padding-bottom: 10px;
+    margin: 40px 0 30px 0;
+}
+
+.menu-item-card {
+    margin-bottom: 20px;
+}
+
+.menu-item-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.menu-item-price {
+    color: var(--primary-green);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.menu-item-description {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 60px 0;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-section p {
+        font-size: 1rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+.text-primary-green {
+    color: var(--primary-green);
+}
+
+.bg-primary-green {
+    background-color: var(--primary-green);
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
