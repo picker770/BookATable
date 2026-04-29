@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}My Bookings - BookATable Spice{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="text-center mb-5" style="color: #556B2F;">My Bookings</h1>
+    
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+    
+    <!-- Upcoming Bookings -->
+    <h2 class="mb-4">Upcoming Reservations</h2>
+    {% if upcoming_bookings %}
+        <div class="row">
+            {% for booking in upcoming_bookings %}
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Booking #{{ booking.booking_reference }}</h5>
+                            <hr>
+                            <p><strong><i class="fas fa-calendar"></i> Date:</strong> {{ booking.date|date:"F d, Y" }}</p>
+                            <p><strong><i class="fas fa-clock"></i> Time:</strong> {{ booking.time_slot }}</p>
+                            <p><strong><i class="fas fa-users"></i> Guests:</strong> {{ booking.number_of_guests }}</p>
+                            <p><strong><i class="fas fa-chair"></i> Table:</strong> Table {{ booking.table.table_number }} ({{ booking.table.get_capacity_display }})</p>
+                            {% if booking.special_requests %}
+                                <p><strong><i class="fas fa-comment"></i> Requests:</strong> {{ booking.special_requests }}</p>
+                            {% endif %}
+                            <p><strong><i class="fas fa-check-circle"></i> Status:</strong> 
+                                <span class="badge bg-success">{{ booking.get_status_display }}</span>
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <a href="{% url 'cancel_booking' booking.id %}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to cancel this booking?')">
+                                <i class="fas fa-times"></i> Cancel Booking
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-info">
+            <i class="fas fa-info-circle"></i> You have no upcoming bookings. <a href="{% url 'create_booking' %}">Book a table now!</a>
+        </div>
+    {% endif %}
+    
+    <!-- Past Bookings -->
+    {% if past_bookings %}
+        <h2 class="mb-4 mt-5">Past Reservations</h2>
+        <div class="row">
+            {% for booking in past_bookings %}
+                <div class="col-md-6 mb-4">
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h5 class="card-title">Booking #{{ booking.booking_reference }}</h5>
+                            <hr>
+                            <p><strong>Date:</strong> {{ booking.date|date:"F d, Y" }}</p>
+                            <p><strong>Time:</strong> {{ booking.time_slot }}</p>
+                            <p><strong>Guests:</strong> {{ booking.number_of_guests }}</p>
+                            <p><strong>Status:</strong> <span class="badge bg-secondary">{{ booking.get_status_display }}</span></p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+    
+    <!-- Cancelled Bookings -->
+    {% if cancelled_bookings %}
+        <h2 class="mb-4 mt-5">Cancelled Reservations</h2>
+        <div class="row">
+            {% for booking in cancelled_bookings %}
+                <div class="col-md-6 mb-4">
+                    <div class="card border-danger">
+                        <div class="card-body">
+                            <h5 class="card-title">Booking #{{ booking.booking_reference }}</h5>
+                            <hr>
+                            <p><strong>Date:</strong> {{ booking.date|date:"F d, Y" }}</p>
+                            <p><strong>Time:</strong> {{ booking.time_slot }}</p>
+                            <p><strong>Guests:</strong> {{ booking.number_of_guests }}</p>
+                            <p><strong>Status:</strong> <span class="badge bg-danger">Cancelled</span></p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
