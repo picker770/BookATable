@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Booking Confirmed - BookATable Spice{% endblock %}
+
+{%block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow text-center">
+                <div class="card-header bg-success text-white">
+                    <h3><i class="fas fa-check-circle"></i>Booking Confirmed!</h3>
+                </div>
+                <div class="card-body">
+                    <div class="mb-4">
+                        <i class="fas fa-receipt fa-4x" style="color: #556B2F"></i>
+                    </div>
+                    <h4>Your Booking reference:</h4>
+                    <h2 class="display-4" style="color: #556b2f; letter-spacing: 2px;">
+                        {{ booking:booking_reference }}
+                    </h2>
+                    <hr>
+                    <div class="text-start mt-4">
+                        <p><strong><i class="fas fa-calendar"></i> Date:</strong> {{ booking.date|date:"l, F d, Y" }}</p>
+                        <p><strong><i class="fas fa-clock"></i> Time:</strong> {{ booking.time_slot }}</p>
+                        <p><strong><i class="fas fa-users"></i> Number of Guests:</strong> {{ booking.number_of_guests }}</p>
+                        <p><strong><i class="fas fa-chair"></i> Table:</strong> Table {{ booking.table.table_number }} ({{ booking.table.get_capacity_display }})</p>
+                        {% if booking.special_requests %}
+                            <p><strong><i class="fas fa-comment"></i> Special Requests:</strong> {{ booking.special_requests }}</p>
+                        {% endif %}
+                    </div>
+                    <hr>
+                    <div class="alert alert-success">
+                        <i class="fas fa-envelope"></i> A confirmation has been sent to your email.
+                        Please save your booking reference number.
+                    </div>
+                    <a href="{% url 'my_bookings' %}" class="btn btn-primary">
+                        <i class="fas fa-calendar-check"></i> View My Bookings
+                    </a>
+                    <a href="{% url 'home' %}" class="btn btn-outline-primary">
+                        <i class="fas fa-home"></i> Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
