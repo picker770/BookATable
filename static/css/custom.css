@@ -15,7 +15,7 @@
 /* Global Styles */
 body {
     background-color: var(--primary-beige);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--dark-gray);
     display: flex;
     flex-direction: column;
