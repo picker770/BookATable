@@ -24,7 +24,7 @@
                 <div class="col-md-6 mb-4">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">Booking #{{ booking.booking_reference }}</h5>
+                            <h3 class="card-title h5">Booking #{{ booking.booking_reference }}</h3>
                             <hr>
                             <p><strong><i class="fas fa-calendar"></i> Date:</strong> {{ booking.date|date:"F d, Y" }}</p>
                             <p><strong><i class="fas fa-clock"></i> Time:</strong> {{ booking.time_slot }}</p>
@@ -60,7 +60,7 @@
                 <div class="col-md-6 mb-4">
                     <div class="card bg-light">
                         <div class="card-body">
-                            <h5 class="card-title">Booking #{{ booking.booking_reference }}</h5>
+                            <h3 class="card-title h5">Booking #{{ booking.booking_reference }}</h3>
                             <hr>
                             <p><strong>Date:</strong> {{ booking.date|date:"F d, Y" }}</p>
                             <p><strong>Time:</strong> {{ booking.time_slot }}</p>
@@ -81,7 +81,7 @@
                 <div class="col-md-6 mb-4">
                     <div class="card border-danger">
                         <div class="card-body">
-                            <h5 class="card-title">Booking #{{ booking.booking_reference }}</h5>
+                            <h3 class="card-title h5">Booking #{{ booking.booking_reference }}</h3>
                             <hr>
                             <p><strong>Date:</strong> {{ booking.date|date:"F d, Y" }}</p>
                             <p><strong>Time:</strong> {{ booking.time_slot }}</p>
