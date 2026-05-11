@@ -99,6 +99,17 @@ I have used the recommended [HTML W3C validator](https://validator.w3.org) to va
 | My Bookings | `https://bookatable-raja-2655b485c5d7.herokuapp.com/bookings/my-bookings/`| ✅ Pass |
 | Profile | `https://bookatable-raja-2655b485c5d7.herokuapp.com/accounts/profile/`| ✅ Pass |
 
+### HTML Code validation screenshots
+
+| Homepage | ![](/static/docs/html-validaton-screenshots/home.png)|
+| Menu | ![](/static/docs/html-validaton-screenshots/menu.png)|
+| Login | ![](/static/docs/html-validaton-screenshots/login.png)|
+| Register | ![](/static/docs/html-validaton-screenshots/register.png)|
+| Book a table | ![](/static/docs/html-validaton-screenshots/create.png)|
+| My Bookings | ![](/static/docs/html-validaton-screenshots/my-bookings.png)|
+| Profile | ![](/static/docs/html-validaton-screenshots/profile.png)|
+
+
 ### CSS Validation
 
 I have used the recommend [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate my CSS files.
@@ -106,6 +117,7 @@ I have used the recommend [CSS Jigsaw Validator](https://jigsaw.w3.org/css-valid
 | File | Link | Status |
 |------|------|--------|
 | `static/css/custom.css` | [Validate CSS ](https://jigsaw.w3.org/css-validator/validator?uri=https://bookatable-raja-2655b485c5d7.herokuapp.com/static/css/custom.css) | ✅ Pass |
+
 
 ---
 
@@ -194,6 +206,18 @@ Tested using Chrome DevTools on the following breakpoints:
 | Mobile - Menu Page | ![](/static/docs/responsiveness/mobile-menu.png)|
 | Tablet - Booking Form | ![](/static/docs/responsiveness/tablet-booking.png)|
 | Desktop - Homepage | ![](/static/docs/responsiveness/desktop-home.png)|
+
+---
+
+## Browser Compatibility
+
+| Browser | Screenshot | Result |
+|---------|------------|--------|
+| Chrome  | ![Chrome](/static/docs/browser-testing/chrome.png)| ✅ Work as expected |
+| Edge    | ![Edge](/static/docs/browser-testing/edge.png)| ✅ Work as expected |
+| Firefox  | ![Firefox](/static/docs/browser-testing/firefox.png)| ✅ Work as expected |
+| Safari  | ![Safari](/static/docs/browser-testing/safari.png)| ✅ Work as expected |
+| Opera  | ![Opera](/static/docs/browser-testing/opera.png)| ✅ Work as expected |
 
 ---
 
