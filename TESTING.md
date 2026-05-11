@@ -221,5 +221,74 @@ Tested using Chrome DevTools on the following breakpoints:
 
 ---
 
+## Test Cases(Sample)
 
+| Feature | Step(s) | Expected | Actual | Pass |
+|---------|---------|----------|--------|------|
+| User Registration | Fill form with valid data | Redirect to login, user created | As expectd | ✅ |
+| User Login | Enter valid credentials | Redirect to home, navbar changes | As expected | ✅ |
+| View Menu | Click "Menu" in navbar | All categories and items displayed | As expected | ✅ |
+| Create Booking | Select date,time,guests,submit | Booking reference displayed | As expected | ✅ 
+| My Bookings | Click "My Bookings" | Upcoming Bookings shown | As expected | ✅ |
+| Cancel Booking | Click cancel button | Booking moves to cancelled section | As expected | ✅ |
+| Double-Booking | Book same date/time twice | Different table assign or error shown | As expected | ✅ |
+| Admin Access | visit /admin with superuser | Admin dashboard displays | As expected | ✅ |
+
+---
+
+## Accessibility Testing
+Manual accessibility checks were performed:
+
+| Test | Result |
+|------|--------|
+| Semantic HTML structure(header, nav, main, footer)| ✅ Pass |
+| ARIA labels on icon-only links | ✅ Pass |
+| Color contrast ratio (WCAG 2.1 AA) - 7.1:1 | ✅ Pass |
+| Keyboard navigation(Tab, Shift+Tab, Enter) | ✅ Pass |
+| Form labels associated with inputs | ✅ Pass |
+| Heading hierarchy (h1,h2,h3) | ✅ Pass |
+| Form labels associated with inputs | ✅ Pass |
+
+---
+
+## User Story Testing
+### New Customers
+
+| User Story | Test | Result |
+|------------|------|--------|
+| I want to view the menu without logging in | Visit /menu/ as guest | ✅ Menu fully visible |		
+| I want to book a table easily | Click "Book a Table", fill form |	✅ Simple 4-field form |
+| I want to choose date, time, and guest count |	Use booking form dropdowns |	✅ All options available |
+| I want confirmation of my booking |	Submit booking |	✅ Reference number displayed |
+
+### Returning Customers
+
+| User Story | Test | Result |
+|------------|------|---------|
+|I want to log in quickly|	Use login form|	✅ Redirects to homepage|
+|I want to view my upcoming bookings|	Click "My Bookings"|	✅ Upcoming section shows active bookings|
+|I want to cancel a booking|	Click cancel button	|✅ Confirmation, moved to cancelled|
+|I want to see my booking history|	View My Bookings page|	✅ Past and cancelled sections visible|
+
+### Restaurant Owner (Admin)
+
+|User Story|	Test|	Result|
+|----------|--------|---------|
+|I want to manage tables|	Admin → Tables → Add/Edit/|	✅ Full CRUD functionality|
+|I want to manage time slots|	Admin → Time slots → Add/Edit/Delete|	✅ Full CRUD functionality|
+|I want to view all bookings|	Admin → Bookings	|✅ All bookings visible with filters|
+|I want to prevent double-booking|	Attempt to double-book|	✅ Constraint prevents it|
+
+## Accessibility Needs
+
+|User Story|	Test|	Result|
+|----------|--------|---------|
+|I want sufficient color contrast|	Check with contrast tool|	✅ 7.1:1 ratio passes WCAG|
+|I want to navigate without a mouse|	Use Tab, Enter keys|	✅ Full keyboard navigation|
+|I want screen reader compatible links|	Check aria-labels|	✅ Icon links have labels|
+
+
+---
+
+## Bugs and Fixes
 
