@@ -87,6 +87,115 @@ Manual testing involves a human interacting with the application to verify funct
 
 ### HTML Validation
 
+I have used the recommended [HTML W3C validator](https://validator.w3.org) to validate all of my HTML files.
+
+| Page | URL | Status |
+|------|-----|--------|
+| Homepage | `https://bookatable-raja-2655b485c5d7.herokuapp.com/`| ✅ Pass |
+| Menu | `https://bookatable-raja-2655b485c5d7.herokuapp.com/menu/`| ✅ Pass |
+| Login | `https://bookatable-raja-2655b485c5d7.herokuapp.com/accounts/login/`| ✅ Pass |
+| Register | `https://bookatable-raja-2655b485c5d7.herokuapp.com/accounts/register/`| ✅ Pass |
+| Book a table | `https://bookatable-raja-2655b485c5d7.herokuapp.com/bookings/create/`| ✅ Pass |
+| My Bookings | `https://bookatable-raja-2655b485c5d7.herokuapp.com/bookings/my-bookings/`| ✅ Pass |
+| Profile | `https://bookatable-raja-2655b485c5d7.herokuapp.com/accounts/profile/`| ✅ Pass |
+
+### CSS Validation
+
+I have used the recommend [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate my CSS files.
+
+| File | Link | Status |
+|------|------|--------|
+| `static/css/custom.css` | [Validate CSS ](https://jigsaw.w3.org/css-validator/validator?uri=https://bookatable-raja-2655b485c5d7.herokuapp.com/static/css/custom.css) | ✅ Pass |
+
+---
+
+## Lighthouse Testing (Chrome DevTools)
+
+Lighthouse audits were run on the deployed Heroku site.
+
+| Category | Score | Screenshot |
+|----------|-------|------------|
+| Performance | 99% | ![performance](/static/docs/lighthouse/performance.png) |
+| Accessibility | 98% | ![performance](/static/docs/lighthouse/accessibility.png) |
+| Best Practices | 77% | ![performance](/static/docs/lighthouse/bestpractices.png) |
+| SEO | 100% | ![performance](/static/docs/lighthouse/seo.png) |
+
+*(Scores may vary slightly by device/network)*
+
+**Note:** Best Pracitces score of 77% is due to third-party cookies from external resources(unsplash hero images).
+
+## Unit Testing Results
+
+Django's built-in test framework was used for unit testing.
+
+### Test files
+
+| File | Tests | Description |
+|------|-------|-------------|
+| `bookings/tests.py`| 7 tests | Table, TimeSlot, Booking models, double-booking prevention |
+| `bookings/test_views.py` | 4 tests | View access, login requirements |
+| `menu/tests.py` | 7 tests | Category and MenuItem models |
+| `accounts/tests.py`| 6 tests | Registration, login, profile access |
+
+### Test Output
+
+```
+python manage.py test
+Found 24 test(s).
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+........................
+----------------------------------------------------------------------
+Ran 24 tests in 18.556s
+
+OK
+```
+
+### What was Tested
+
+* ✅ Table creation with capacity choices (2,4,6,8 seats)
+* ✅ TimeSlot creation with time choices (5:00PM - 9:00 PM)
+* ✅ Booking auto-generates 8-character reference number
+* ✅ Double-booking prevention raises IntegerityError
+* ✅ Unauthenticated users redirected from booking pages
+* ✅ Menu item price formatting (2 decimal places)
+* ✅ User registration with valid/invalid passwords
+
+---
+
+## Responsiveness Testing
+
+Tested using Chrome DevTools on the following breakpoints:
+
+| Device | Screen Width | Result |
+|--------|--------------|--------|
+| iphone SE | 375px | ✅ Fully responsive|
+| iphone 12/13/14 | 390px | ✅ Fully responsive|
+| ipad Mini | 768px | ✅ Fully responsive|
+| ipad Air | 820px | ✅ Fully responsive|
+| Desktop | 1024px+ | ✅ Fully responsive|
+| Desktop | 1440px+ | ✅ Fully responsive|
+| Desktop | 1920px+ | ✅ Fully responsive|
+
+### Responsive Features Verified:
+* ✅ Navigation bar collapses to hamburger menu on mobile
+* ✅ Menu cards stack vertically on mobile (1 column)
+* ✅ Menu cards display in 2 columns on desktop
+* ✅ Booking form adjusts to full width on mobile
+* ✅ Tables display in responsive grid
+* ✅ Footer stacks columns on mobile
+* ✅ Button sizes remain touch-friendly
+* ✅ No horizontal scroll on any device
+
+#### Sceenshots 
+
+| Device/ View | Screenshot |
+|--------------|------------|
+| Mobile - Menu Page | ![](/static/docs/responsiveness/mobile-menu.png)|
+| Tablet - Booking Form | ![](/static/docs/responsiveness/tablet-booking.png)|
+| Desktop - Homepage | ![](/static/docs/responsiveness/desktop-home.png)|
+
+---
 
 
 
