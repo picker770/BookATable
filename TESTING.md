@@ -330,7 +330,7 @@ The BookATable Spice restaurant booking system functions reliably and meets all 
 * ✅ Fully responsive design on all devices
 * ✅ Deployed and working on Heroku
 * ✅ Admin panel with full data management
-* ✅ 22 unit tests passing
+* ✅ 24 unit tests passing
 
 The application has been tested across multiple browsers and devices, with all core features working as expected. Known limitations are documented for future improvement.
 
