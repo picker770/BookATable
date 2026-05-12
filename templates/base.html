@@ -32,7 +32,7 @@
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand" href="{% url 'home' %}">
-                <i class="fas fa-utensils"></i> BookATable Spice
+                <i class="fas fa-utensils aria-hidden="true" "></i> BookATable Spice
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -41,39 +41,39 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'home' %}">
-                            <i class="fas fa-home"></i> Home
+                            <i class="fas fa-home aria-hidden="true" "></i> Home
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'menu' %}">
-                            <i class="fas fa-book-open"></i> Menu
+                            <i class="fas fa-book-open aria-hidden="true" "></i> Menu
                         </a>
                     </li>
                     {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'my_bookings' %}">
-                                <i class="fas fa-calendar-check"></i> My Bookings
+                                <i class="fas fa-calendar-check aria-hidden="true" "></i> My Bookings
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{% url 'profile' %}" class="nav-link">
-                                <i class="fas fa-user"></i> Profile
+                                <i class="fas fa-user aria-hidden="true" "></i> Profile
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'logout' %}">
-                                <i class="fas fa-sign-out-alt"></i> Logout
+                                <i class="fas fa-sign-out-alt aria-hidden="true" "></i> Logout
                             </a>
                         </li>
                     {% else %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'login' %}">
-                                <i class="fas fa-sign-in-alt"></i> Login
+                                <i class="fas fa-sign-in-alt aria-hidden="true" "></i> Login
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'register' %}">
-                                <i class="fas fa-user-plus"></i> Register
+                                <i class="fas fa-user-plus aria-hidden="true" "></i> Register
                             </a>
                         </li>
                     {% endif %}
