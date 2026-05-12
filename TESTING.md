@@ -292,3 +292,48 @@ Manual accessibility checks were performed:
 
 ## Bugs and Fixes
 
+### Bugs Fixed During Development
+
+| Bug | Description | Fix |
+|-----|-------------|-----|
+|Registration view returned None|	Register view missing return for GET requests|	Added proper return statements for both GET and POST|
+|Template syntax error|	Used colon instead of dot: booking:booking_reference|	Changed to booking.booking_reference|
+|DEBUG not reading from env.py|	DEBUG remained False locally|	Updated to os.environ.get('DEBUG', 'False') == 'True'|
+|Green overlay on menu hero image|	|CSS gradient covered Unsplash image|	Removed gradient, used clean background|
+|Static files not loading on Heroku|	Missing STATIC_ROOT setting|	Added STATIC_ROOT = BASE_DIR / 'staticfiles'|
+|Price display formatting|	Menu prices showed £5.5 instead of £5.50|	Updated __str__ method to use :.2f formatting|
+|CSRF_TRUSTED_ORIGINS missing|	Heroku rejected POST requests|	Added CodeAnywhere and Heroku origins|
+|Unit test password mismatch|	Test had missing exclamation mark|	Corrected password2 value to match password1|
+|Table capacity mismatch|	8 guests assigned to 2-seater table|	Added capacity filtering logic in booking view|
+|Past date selection allowed|	Users could book yesterday|	Added min attribute to date picker|
+|Social media links not working|	# placeholders|	Added actual profile URLs|
+
+### Known Issues (Future Improvements)
+
+| Issue| Description| Planned Fix|
+|------|------------|------------|
+|No email confirmations|	Users don't receive email after booking	|Integrate Django email backend|
+|No user profile editing|	Can't update phone/address|	Add profile edit form|
+|No table selection|	System auto-assigns table|	Let users choose specific table|
+|Time slots not filtered by availability	|Booked slots still show|	Hide fully booked time slots|
+|No payment integration|	No deposit for bookings|	Add Stripe integration (future)|
+
+## Conclusion
+The BookATable Spice restaurant booking system functions reliably and meets all core project requirements:
+
+* ✅ User authentication (register, login, logout, profile)
+* ✅ Menu display with categories
+* ✅ Table booking system with date/time/guest selection
+* ✅ Double-booking prevention at database level
+* ✅ My Bookings dashboard (upcoming, past, cancelled)
+* ✅ Booking cancellation functionality
+* ✅ Fully responsive design on all devices
+* ✅ Deployed and working on Heroku
+* ✅ Admin panel with full data management
+* ✅ 22 unit tests passing
+
+The application has been tested across multiple browsers and devices, with all core features working as expected. Known limitations are documented for future improvement.
+
+This testing approach ensures confidence in both functionality and code quality while leaving room for future enhancements such as email confirmations, profile editing, and payment integration.
+
+
