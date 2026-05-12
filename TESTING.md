@@ -118,6 +118,27 @@ I have used the recommend [CSS Jigsaw Validator](https://jigsaw.w3.org/css-valid
 |------|------|--------|
 | `static/css/custom.css` | [Validate CSS ](https://jigsaw.w3.org/css-validator/validator?uri=https://bookatable-raja-2655b485c5d7.herokuapp.com/static/css/custom.css) | ✅ Pass |
 
+### Python Validation (CI Python Linter)
+
+| File | Result | Screenshot |
+|------|--------|-------|
+| `bookatable/settings.py` | ✅ Pass | ![settings.py](/static/docs/python-validation-screenshots/settings.png) |
+| `accounts/views.py` | ✅ Pass | ![views.py](/static/docs/python-validation-screenshots/accountsviews.png) |
+| `accounts/urls.py` | ✅ Pass | ![urls.py](/static/docs/python-validation-screenshots/accountsurls.png) |
+| `bookings/views.py` | ✅ Pass | ![views.py](/static/docs/python-validation-screenshots/bookingsviews.png) |
+| `bookings/models.py` | ✅ Pass | ![models.py](/static/docs/python-validation-screenshots/bookingsmodels.png) |
+| `bookings/forms.py` | ✅ Pass | ![forms.py](/static/docs/python-validation-screenshots/bookingsforms.png) |
+| `menu/views.py` | ✅ Pass | ![views.py](/static/docs/python-validation-screenshots/menuviews.png) |
+| `menu/models.py` | ✅ Pass | ![models.py](/static/docs/python-validation-screenshots/menumodels.png) |
+| `core/views.py` | ✅ Pass | ![views.py](/static/docs/python-validation-screenshots/coreviews.png) |
+
+**Note:** Line length warnings are style suggestions only and do not affect functionality.
+
+### JavaScript Validation
+
+|File | Tool | Screenshot |
+|-----|------|------------|
+| static/js/main.js | ESLint/JSHint| ![main.js](/static/docs/js-validation/main.png)|
 
 ---
 
