@@ -134,7 +134,7 @@ Lighthouse audits were run on the deployed Heroku site.
 
 *(Scores may vary slightly by device/network)*
 
-**Note:** Best Pracitces score of 77% is due to third-party cookies from external resources(unsplash hero images).
+**Note:** Best Practices score of 77% is due to third-party cookies from external resources(unsplash hero images).
 
 ## Unit Testing Results
 
@@ -168,7 +168,7 @@ OK
 * ✅ Table creation with capacity choices (2,4,6,8 seats)
 * ✅ TimeSlot creation with time choices (5:00PM - 9:00 PM)
 * ✅ Booking auto-generates 8-character reference number
-* ✅ Double-booking prevention raises IntegerityError
+* ✅ Double-booking prevention raises IntegrityError
 * ✅ Unauthenticated users redirected from booking pages
 * ✅ Menu item price formatting (2 decimal places)
 * ✅ User registration with valid/invalid passwords
@@ -199,7 +199,7 @@ Tested using Chrome DevTools on the following breakpoints:
 * ✅ Button sizes remain touch-friendly
 * ✅ No horizontal scroll on any device
 
-#### Sceenshots 
+#### Screenshots 
 
 | Device/ View | Screenshot |
 |--------------|------------|
@@ -225,7 +225,7 @@ Tested using Chrome DevTools on the following breakpoints:
 
 | Feature | Step(s) | Expected | Actual | Pass |
 |---------|---------|----------|--------|------|
-| User Registration | Fill form with valid data | Redirect to login, user created | As expectd | ✅ |
+| User Registration | Fill form with valid data | Redirect to login, user created | As expected | ✅ |
 | User Login | Enter valid credentials | Redirect to home, navbar changes | As expected | ✅ |
 | View Menu | Click "Menu" in navbar | All categories and items displayed | As expected | ✅ |
 | Create Booking | Select date,time,guests,submit | Booking reference displayed | As expected | ✅ 
